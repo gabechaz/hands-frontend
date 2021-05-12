@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+
+//File Imports
+
+import './css-files/App.css';
+import {useEffect, useState} from 'react' 
+import {Switch, Route} from 'react-router-dom'
+import Signup from './page-components/Signup.js'
+
+
 
 function App() {
+
+  // const declarations
+  const API = 'http://localhost:3000'
+
+  //useState declarations
+
+  
+  useEffect(() => {
+    fetch(`${API}/users`)
+    .then(res => res.json())
+    .then(users =>console.log(users) )
+  }, [API]
+  )
+
+
+  //Input State Handler Function
+
+
   return (
+    <Switch>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Route path="/" exact component={Signup} />
+
     </div>
+    </Switch>
   );
 }
 
