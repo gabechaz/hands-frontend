@@ -8,6 +8,7 @@ import Signup from './page-components/Signup.js'
 
 
 
+
 function App() {
 
   // const declarations
@@ -24,16 +25,17 @@ function App() {
   )
 
 
-  //Input State Handler Function
+
 
 
   return (
     <Switch>
-    <div className="App">
+      <div id='App'>
 
-      <Route path="/" exact component={Signup} />
+      <Route path="/signup" exact component={Signup} />
 
-    </div>
+      </div>
+
     </Switch>
   );
 }

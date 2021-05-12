@@ -1,0 +1,17 @@
+.outer-signup-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute;
+    right: 500px; */
+    border-style: solid;
+    border-color: white;
+    height: 500 px;
+
+}
+
+.signup-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
