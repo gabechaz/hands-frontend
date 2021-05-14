@@ -5,14 +5,14 @@ import {useState} from 'react'
 function Signup () {
 
     // State Variables
-    const [userName, setUserName] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [age, setAge] = useState("")
 
     // State Variable Handlers
 
     function handleUsername (e) {
-        setUserName(e)
+        setUsername(e)
     }
 
     function handlePassword (e) {
@@ -40,12 +40,14 @@ function Signup () {
     <div className='outer-signup-div'>
         <div className='signup-card'>
             <h1 className='signup-header'> Sign Up</h1>
-            <form>
-                <input value={userName} />
+            <form className='signup-form'>
+                <input value={username} onChange={setUsername} />
                 <br />
-                <input value ={password} />
+                <input value ={password} onChange={setPassword} />
                 <br />
-                <input value ={age} type='number' />
+                <input value ={age} type='number' onChange={setAge} />
+                <br />
+                <button className='submit-button'>Submit</button>
             </form>
         </div>
     </div>
