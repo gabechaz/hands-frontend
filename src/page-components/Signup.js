@@ -4,10 +4,36 @@ import {useState} from 'react'
 
 function Signup () {
 
-    //State Variables
+    // State Variables
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [age, setAge] = useState("")
+
+    // State Variable Handlers
+
+    function handleUsername (e) {
+        setUserName(e)
+    }
+
+    function handlePassword (e) {
+        setPassword(e)
+    }
+
+    function handleAge(e) {
+        setAge(e)
+    }
+
+    //New Signup Object
+
+    const newSignup = {
+        username,
+        password,
+        age
+    }
+
+    // New Signup Post Fetch Action
+
+    //PUT THE FETCH IN HERE YA BIG DUMMY
 
 
     return (
