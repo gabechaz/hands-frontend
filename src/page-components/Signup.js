@@ -12,15 +12,17 @@ function Signup () {
     // State Variable Handlers
 
     function handleUsername (e) {
-        setUsername(e)
+        setUsername(e.targetvalue)
+
     }
 
     function handlePassword (e) {
-        setPassword(e)
+        setPassword(e.target.value)
     }
 
     function handleAge(e) {
-        setAge(e)
+        setAge(e.target.value)
+        console.log(age)
     }
 
     //New Signup Object
@@ -41,11 +43,11 @@ function Signup () {
         <div className='signup-card'>
             <h1 className='signup-header'> Sign Up</h1>
             <form className='signup-form'>
-                <input value={username} onChange={setUsername} />
+                <input value={username} type='text' onChange={handleUsername} />
                 <br />
-                <input value ={password} onChange={setPassword} />
+                <input value ={password} type='text' onChange={handlePassword} />
                 <br />
-                <input value ={age} type='number' onChange={setAge} />
+                <input value ={age} type='number' onChange={handleAge} />
                 <br />
                 <button className='submit-button'>Submit</button>
             </form>
