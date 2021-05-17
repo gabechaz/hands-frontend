@@ -32,7 +32,9 @@ function App() {
     <Switch>
       <div id='App'>
 
-      <Route path="/signup" exact component={Signup} />
+      <Route  path="/signup" exact>
+        <Signup API={API} />
+      </Route>
 
       </div>
 

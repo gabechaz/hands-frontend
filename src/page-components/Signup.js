@@ -2,7 +2,25 @@
 import '../css-files/Signup.css'
 import {useState} from 'react'
 
-function Signup () {
+function Signup ({API}) {
+
+    console.log(API)
+
+    //Fetch Requests
+    function signup(e) {
+        e.preventDefault()
+           fetch(`${API}/users`, {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+          "Accept" : "application/json"},
+          body: JSON.stringify(newSignup)
+            }
+        )
+        .then(res => res.json())
+        .then(newUser => console.log(newUser))
+    }
+ 
 
     // State Variables
     const [username, setUsername] = useState("")
@@ -12,7 +30,7 @@ function Signup () {
     // State Variable Handlers
 
     function handleUsername (e) {
-        setUsername(e.targetvalue)
+        setUsername(e.target.value)
 
     }
 
@@ -22,15 +40,15 @@ function Signup () {
 
     function handleAge(e) {
         setAge(e.target.value)
-        console.log(age)
+
     }
 
     //New Signup Object
 
     const newSignup = {
-        username,
-        password,
-        age
+        username: username,
+        password: password,
+        age: age
     }
 
     // New Signup Post Fetch Action
@@ -49,7 +67,7 @@ function Signup () {
                 <br />
                 <input value ={age} type='number' onChange={handleAge} />
                 <br />
-                <button className='submit-button'>Submit</button>
+                <button onClick={signup} className='submit-button'>Submit</button>
             </form>
         </div>
     </div>
