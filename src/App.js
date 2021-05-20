@@ -5,6 +5,7 @@ import './css-files/App.css';
 import {useEffect, useState} from 'react' 
 import {Switch, Route} from 'react-router-dom'
 import Signup from './page-components/Signup.js'
+import Profile from './page-components/Profile.js'
 
 
 
@@ -24,6 +25,9 @@ function App() {
   }, [API]
   )
 
+  //State Variables
+   const [currentUser, setCurrentUser] = useState({username:'Gabe', age: 30})
+
 
 
 
@@ -31,6 +35,10 @@ function App() {
   return (
     <Switch>
       <div id='App'>
+
+        <Route path='/users/:id'>
+          <Profile currentUser={currentUser} API={API}  />
+        </Route>
 
       <Route  path="/signup" exact>
         <Signup API={API} />
