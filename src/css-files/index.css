@@ -1,6 +1,11 @@
 * {
     background-color: black;
     color: white;
+
+}
+
+::placeholder {
+    color: white;
 }
 
 input {

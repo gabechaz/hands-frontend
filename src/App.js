@@ -6,6 +6,8 @@ import {useEffect, useState} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Signup from './page-components/Signup.js'
 import Profile from './page-components/Profile.js'
+import AddQuestion from './page-components/AddQuestion';
+import QuestionStats from './page-components/QuestionStats'
 
 
 
@@ -26,7 +28,7 @@ function App() {
   )
 
   //State Variables
-   const [currentUser, setCurrentUser] = useState({username:'Gabe', age: 30})
+   const [currentUser, setCurrentUser] = useState({username:'Gabe', age: 30, id: 1})
 
 
 
@@ -42,6 +44,14 @@ function App() {
 
       <Route  path="/signup" exact>
         <Signup API={API} />
+      </Route>
+
+      <Route path="/question-stats/:id">
+        <QuestionStats API={API} />
+      </Route>
+
+      <Route path ='/add-question'>
+        <AddQuestion API={API} currentUser={currentUser} />
       </Route>
 
       </div>
