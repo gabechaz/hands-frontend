@@ -40,6 +40,7 @@ function App() {
     <div id='App'>
 
       <Navbar currentUser={currentUser} />
+      <br />
 
     <Switch>
    
@@ -63,7 +64,7 @@ function App() {
    
 
     </Switch>
-    
+
     </div>
   );
 }
