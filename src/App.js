@@ -9,6 +9,7 @@ import Profile from './page-components/Profile.js'
 import AddQuestion from './page-components/AddQuestion';
 import QuestionStats from './page-components/QuestionStats'
 import Navbar from './page-components/Navbar'
+import QuestionFinder from './page-components/QuestionFinder'
 
 
 
@@ -43,7 +44,10 @@ function App() {
       <br />
 
     <Switch>
-   
+
+        <Route path ='/question-finder' exact>
+          <QuestionFinder />
+        </Route>
 
         <Route path='/users/:id'>
           <Profile currentUser={currentUser} API={API}  />

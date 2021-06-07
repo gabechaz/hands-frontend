@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar () {
     return (
-        <div>
+       
         <nav className='navbar'>
             <Link to = '/signup'>
             <span>
@@ -16,14 +16,15 @@ function Navbar () {
             <span>
                  Add Question
             </span>
-            </Link>    <Link>
+            </Link> 
+              <Link to = '/question-finder'>
             <span>
-                Test 
+                Answer Quesitions 
             </span>
             </Link>
           
         </nav>
-        </div>
+        
     )
 }
 
