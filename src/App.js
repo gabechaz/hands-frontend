@@ -8,6 +8,7 @@ import Signup from './page-components/Signup.js'
 import Profile from './page-components/Profile.js'
 import AddQuestion from './page-components/AddQuestion';
 import QuestionStats from './page-components/QuestionStats'
+import Navbar from './page-components/Navbar'
 
 
 
@@ -35,8 +36,13 @@ function App() {
 
 
   return (
+
+    <div id='App'>
+
+      <Navbar currentUser={currentUser} />
+
     <Switch>
-      <div id='App'>
+   
 
         <Route path='/users/:id'>
           <Profile currentUser={currentUser} API={API}  />
@@ -54,9 +60,11 @@ function App() {
         <AddQuestion API={API} currentUser={currentUser} />
       </Route>
 
-      </div>
+   
 
     </Switch>
+    
+    </div>
   );
 }
 
