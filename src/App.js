@@ -45,8 +45,8 @@ function App() {
 
     <Switch>
 
-        <Route path ='/question-finder' exact>
-          <QuestionFinder />
+        <Route path ='/question-finder/:id' exact>
+          <QuestionFinder API={API}  />
         </Route>
 
         <Route path='/users/:id'>

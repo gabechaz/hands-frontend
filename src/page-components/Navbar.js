@@ -19,7 +19,7 @@ function Navbar () {
             </Link> 
               <Link to = '/question-finder'>
             <span>
-                Answer Quesitions 
+                Answer Questions 
             </span>
             </Link>
           
